@@ -14,4 +14,4 @@ $(TARGET): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(TARGET)
 
 clean:
-	rm -rf $(TARGET)
+	rm -rf $(TARGET) *.o
