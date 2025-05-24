@@ -1,9 +1,9 @@
 CC = ghc
 CFLAGS =-O3 -Wall -Wextra -Werror
 ASSEMBLY =-S
-TARGETASSEMBLY = Huffman.s
-TARGET = Huffman.exe
-SRC = Huffman.hs
+TARGETASSEMBLY = HuffmanCode.s
+TARGET = HuffmanCode.exe
+SRC = HuffmanCode.hs
 
 .PHONY: all clean
 
