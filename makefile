@@ -5,7 +5,7 @@ CC=clang++
 ALL: $(EXEC)
 
 $(EXEC):
-	$(CC) $(FLAGS) $(EXEC).cpp -c -o $(EXEC).o
+	$(CC) $(FLAGS) -c $(EXEC).cpp
 	$(CC) $(FLAGS) $(EXEC).o  -o $(EXEC).exe
 
 clean:
