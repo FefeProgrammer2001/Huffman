@@ -1,3 +1,9 @@
+/*
+    * Estrutura de dados árvore para armazenar os caracteres
+    * Após a contagem, os caracteres com maior frequência são posicionados próximos a raíz da árvore
+    * Os de menor frequência são posicionados nas partes inferiores da estrutura
+*/
+
 public class Arvore {
     
     private final NoArvore raiz;
@@ -6,16 +12,19 @@ public class Arvore {
         this.raiz = raiz;
     }
 
+    // Retorna a raíz da árvore
     public NoArvore getRaiz() {
         return raiz;
     }
 
+    // Gera a tabela de código, chamando o método private gerarCodigos
     public String[] gerarTabela() {
         String[] tabela = new String[256];
         gerarCodigos(raiz, "", tabela);
         return tabela;
     }
-
+    
+    // Gera os binários 0 e 1 no arquivo final
     private void gerarCodigos(NoArvore no, String codigo, String[] tabela) {
         if(no == null) return;
 

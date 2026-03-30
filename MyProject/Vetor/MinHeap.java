@@ -1,3 +1,9 @@
+/*
+    * Fórmula do filho esquerdo da heap (2*i + 1)
+    * Fórmula do filho direito da heap (2*i + 2)
+    * Fórmula do pai (i - 1) / 2
+*/
+
 public class MinHeap {
 
     private NoArvore[] heap;
@@ -38,6 +44,7 @@ public class MinHeap {
         return minimo;
     }
 
+    // Insere o elemento recem inserido na posição correta
     private void subir(int indice) {
         while(indice > 0) {
             int pai = (indice - 1) / 2;
@@ -50,6 +57,7 @@ public class MinHeap {
         }
     }
 
+    // Remove o menor elemento
     private void descer(int indice) {
         while (true) { 
             int menor = indice;

@@ -28,7 +28,7 @@ public class Descompressor {
             for (int i = 0; i < 256; i++) {
                 frequencias[i] = in.readInt();
             }
-            byte[] dadosComprimidos = in.readAllBytes();
+            byte[] dadosComprimidos = in.readAllBytes(); // Lê os bytes comprimidos do arquivo .huff
             MinHeap heap = new MinHeap();
             for (int i = 0; i < 256; i++) {
                 if (frequencias[i] > 0) {

@@ -1,3 +1,5 @@
+// Classe que implementa um vetor contador de caracteres
+
 public class Contador {
     
     private static final int TAMANHO = 256;
@@ -9,7 +11,7 @@ public class Contador {
 
     public void contar(byte[] bytes) {
         for(byte b : bytes) {
-            vetorContador[b & 0xFF]++;
+            vetorContador[b & 0xFF]++; // Transforma o byte em um valor positivo
         }
     }
 

@@ -14,7 +14,7 @@ public class Compressor {
         byte[] bytes = Files.readAllBytes(Paths.get(caminhoEntrada));
 
         Contador contador = new Contador();
-        contador.contar(bytes);
+        contador.contar(bytes); //  Realiza a contagem de caracteres
 
         System.out.println("--------------------------------------------------");
         System.out.println("ETAPA 1: Tabela de Frequencia de Caracteres");
@@ -24,7 +24,7 @@ public class Compressor {
         MinHeap heap = new MinHeap();
         for(int i = 0; i < 256; i++) {
             if(contador.getFrequencia(i) > 0) {
-                heap.inserir(new NoArvore((char) i, contador.getFrequencia(i)));
+                heap.inserir(new NoArvore((char) i, contador.getFrequencia(i))); // Cria a heap
             }
         }
 
@@ -46,7 +46,7 @@ public class Compressor {
         System.out.println("--------------------------------------------------");
         arvore.imprimirArvore();
 
-        String[] tabela = arvore.gerarTabela();
+        String[] tabela = arvore.gerarTabela(); //  Gera a tabela de códigos
         System.out.println("--------------------------------------------------");
         System.out.println("ETAPA 4: Tabela de Codigos de Huffman");
         System.out.println("--------------------------------------------------");
@@ -58,10 +58,10 @@ public class Compressor {
 
         StringBuilder bitString = new StringBuilder();
         for(byte b : bytes) {
-            bitString.append(tabela[b & 0xFF]);
+            bitString.append(tabela[b & 0xFF]); // Codifica o arquivo final
         }
 
-        int padding = 8 - (bitString.length() % 8);
+        int padding = 8 - (bitString.length() % 8); // Completa com zero para formar os bytes
         if(padding == 8) padding = 0;
 
         for(int i = 0; i < padding; i++) {
